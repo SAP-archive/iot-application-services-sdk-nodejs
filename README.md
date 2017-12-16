@@ -1,18 +1,28 @@
-# SAP IoT Application Enablement SDK for JavaScript in Node.js
-> A nodeJS package that acts as a thin wrapper over the [API of SAP IoT Application Enablement (SAP IoT AE)](https://uacp2.hana.ondemand.com/viewer/350cb3262cb8496b9f5e9e8b039b52db/1.32.0.0/en-US).
+# SAP IoT Application Enablement SDK for Node.js
 
 **Table of Contents**
-* [Getting Started](#getting-started)
+* [Description](#description)
+* [Requirements](#requirements)
+* [Download and Installation](#download-and-installation)
+* [Known Issues](#known-issues)
+* [How to obtain support](#how-to-obtain-support)
 * [Contributing](#contributing)
-* [Versioning](#versioning)
+* [To-Do (upcoming changes)](#to-do-upcoming-changes)
 * [License](#license)
 
-## Getting Started
-The following guide helps you to create a simple node-application which accesses data stored in SAP IoT AE.
+## Description
+A Node.js package that acts as a thin wrapper over the [API of SAP IoT Application Enablement (SAP IoT AE)](https://uacp2.hana.ondemand.com/viewer/350cb3262cb8496b9f5e9e8b039b52db/1.32.0.0/en-US).
 
-__Prerequisites:__
-* Connection to Corporate-Github with [SSH](https://help.github.com/articles/connecting-to-github-with-ssh/)
+## Requirements
+Expected SAP software:
+* SAP IoT Application Enablement
+
+Other requirements:
 * [Node.js](https://nodejs.org/en/)
+* Connection to Github with [SSH](https://help.github.com/articles/connecting-to-github-with-ssh/)
+
+## Download and Installation
+The following guide helps you to create a simple node-application which accesses data stored in SAP IoT AE.
 
 __1. Generate a node.js application:__
 
@@ -71,21 +81,23 @@ Now you can start the application. Enjoy!
 
 > Hint: If you would like to see what is happening in the background, you can enable the logging to console via ``set DEBUG=ae_nodewrapper:*``.
 
-__5. Moving forward:__
+## Known Issues
+NA
 
-_For more complex examples and usage, please refer to the [Wiki](https://github.com/SAP/iot-application-services-sdk-nodejs/wiki)._
+## How to obtain support
+Please create an issue within this GitHub repsitory.
 
 ## Contributing
-
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 Lint and test your code using `npm test`.
 
-## Versioning
+We use [Semantic Versioning](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/SAP/iot-application-services-sdk-nodejs/tags). 
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/SAP/iot-application-services-sdk-nodejs/tags). 
+## To-Do (upcoming changes)
+NA
 
 ## License
-
 Copyright (c) 2017 SAP SE or an SAP affiliate company. All rights reserved.
+
 This file is licensed under the Apache Software License, v. 2 except as noted otherwise in the [LICENSE file](LICENSE).
