@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - Replaced winston with debug.
 
+### Fixed
+- `npm install` issue
+
 ## [1.2.3] - 2017-10-02
 ### Fixed
 - Do not refuse valid URIs.
