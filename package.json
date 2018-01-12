@@ -1,5 +1,5 @@
 {
-  "name": "@sap/sap-iot-ae-node-wrapper",
+  "name": "iot-application-services-sdk-nodejs",
   "version": "1.3.0",
   "description": "NodeJS package that acts as a thin wrapper over the API of SAP IoT Application Enablement.",
   "main": "index.js",
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.wdf.sap.corp/IoTRIG/AE_NodeWrapper"
+    "url": "https://github.com/SAP/iot-application-services-sdk-nodejs"
   },
   "keywords": [
     "SAP",
