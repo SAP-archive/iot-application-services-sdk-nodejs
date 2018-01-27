@@ -6,9 +6,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-## [1.3.0] - 2017-12-16
+## [1.3.1] - 2018-01-27
+
 ### Added
 - Support for Cloud Foundry.
+
+## [1.3.0] - 2017-12-16
 
 ### Changed
 - Replaced winston with debug.
