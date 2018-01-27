@@ -19,7 +19,6 @@ Expected SAP software:
 
 Other requirements:
 * [Node.js](https://nodejs.org/en/)
-* Connection to Github with [SSH](https://help.github.com/articles/connecting-to-github-with-ssh/)
 
 ## Download and Installation
 The following guide helps you to create a simple node-application which accesses data stored in SAP IoT AE.
@@ -36,7 +35,7 @@ Next, we add the NodeWrapper as a dependency to our node-application. For this p
 {
   ...
   "dependencies": {
-    "iot-application-services-sdk-nodejs": "git+ssh://git@github.com:SAP/iot-application-services-sdk-nodejs.git"
+    "iot-application-services-sdk-nodejs": "https://github.com/SAP/iot-application-services-sdk-nodejs"
   },
   ...
 }
