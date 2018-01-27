@@ -35,7 +35,7 @@ Next, we add the NodeWrapper as a dependency to our node-application. For this p
 {
   ...
   "dependencies": {
-    "iot-application-services-sdk-nodejs": "git+https://git@github.com/SAP/iot-application-services-sdk-nodejs.git"
+    "iot-application-services-sdk-nodejs": "SAP/iot-application-services-sdk-nodejs"
   },
   ...
 }
