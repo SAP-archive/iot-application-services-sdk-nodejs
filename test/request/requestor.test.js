@@ -60,7 +60,7 @@ describe('requestor', function () {
 
     it('should handle bad credentials', function (done) {
       var requestor = new Requestor(sTenant, sLandscape, sHost, sClientId, sClientSecret)
-      requestor._oAuthenticator._sClientSecret = 'wrongSecret'
+      requestor._oAuthenticator._clientSecret = 'wrongSecret'
 
       var sHttpMethod = 'GET'
       var sURI = 'https://appiot-mds.cfapps.eu10.hana.ondemand.com/Things'

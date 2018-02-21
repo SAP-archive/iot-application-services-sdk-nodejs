@@ -134,7 +134,7 @@ describe('authenticator', function () {
           throw new Error('Promise should be rejected')
         },
         function error (err) {
-          assert.equal(err.body, 'Error')
+          assert.equal(err.message, 'Authentification at the API was not sucessfull')
           done()
         }
       )
