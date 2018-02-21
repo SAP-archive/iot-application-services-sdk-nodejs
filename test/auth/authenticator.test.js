@@ -1,7 +1,7 @@
 /* global describe it */
 var assert = require('assert')
 var nock = require('nock')
-var Authenticator = require('../../../lib/request/auth/authenticator')
+var Authenticator = require('./../../lib/auth/authenticator')
 
 // some variable defintions for unit tests
 var aExampleTokens = [{

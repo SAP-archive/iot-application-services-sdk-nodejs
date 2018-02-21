@@ -1,6 +1,6 @@
 /* global describe it */
 var assert = require('assert')
-var Token = require('../../../lib/request/auth/token')
+var Token = require('./../../lib/auth/token')
 
 describe('token', function () {
   describe('getAccessToken', function () {
