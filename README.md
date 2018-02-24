@@ -1,5 +1,7 @@
 # SAP IoT Application Enablement SDK for Node.js
 
+[![Build Status](https://travis-ci.org/SAP/iot-application-services-sdk-nodejs.svg?branch=master)](https://travis-ci.org/SAP/iot-application-services-sdk-nodejs)
+
 **Table of Contents**
 * [Description](#description)
 * [Requirements](#requirements)
@@ -94,7 +96,9 @@ Lint and test your code using `npm test`.
 We use [Semantic Versioning](http://semver.org/). For the versions available, see the [tags on this repository](https://github.com/SAP/iot-application-services-sdk-nodejs/tags). 
 
 ## To-Do (upcoming changes)
-NA
+- [ ] refactoring
+- [ ] support extrem parallelization
+- [ ] Singleton / no constructor for NodeAE
 
 ## License
 Copyright (c) 2017 SAP SE or an SAP affiliate company. All rights reserved.

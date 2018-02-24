@@ -13,15 +13,18 @@ var aExampleTokens = [{
 }]
 var sClientId = 'clientId'
 var sClientSecret = 'clientSecret'
-var sAuthServer = 'https://auth-url.com'
-var sAuthPath = '/token'
+var tenant = 'test'
+var landscape = 'eu10'
+var host = 'hana.ondemand.com'
+var sAuthServer = 'https://' + tenant + '.authentication.' + landscape + '.' + host
+var sAuthPath = '/oauth/token'
 
 describe('authenticator', function () {
   describe('getAccessToken', function () {
     it('should return a token', function (done) {
-      var authenticator = new Authenticator(sClientId, sClientSecret, sAuthServer + sAuthPath)
+      var authenticator = new Authenticator(tenant, landscape, host, sClientId, sClientSecret)
 
-      nock('https://auth-url.com') // intercept the request to the authentification server
+      nock(sAuthServer) // intercept the request to the authentification server
         .post(sAuthPath)
         .reply(200, aExampleTokens[0])
       var promise = authenticator.getAccessToken()
@@ -38,10 +41,10 @@ describe('authenticator', function () {
     })
 
     it('should only return a new token if the stored token is expired', function (done) {
-      var authenticator = new Authenticator(sClientId, sClientSecret, sAuthServer + sAuthPath)
+      var authenticator = new Authenticator(tenant, landscape, host, sClientId, sClientSecret)
 
       // 1.) first call -> new token
-      nock('https://auth-url.com')
+      nock(sAuthServer)
         .post(sAuthPath)
         .reply(200, aExampleTokens[0])
       var oPromise1 = authenticator.getAccessToken()
@@ -51,7 +54,7 @@ describe('authenticator', function () {
           assert.equal(sToken1, aExampleTokens[0].access_token) // check the first token
 
           // 2.) second call -> old token expired -> new token
-          nock('https://auth-url.com')
+          nock(sAuthServer)
             .post(sAuthPath)
             .reply(200, aExampleTokens[1])
           var oPromise2 = authenticator.getAccessToken()
@@ -77,7 +80,7 @@ describe('authenticator', function () {
 
   describe('getNewToken', function () {
     it('should return a new token', function (done) {
-      nock('https://auth-url.com') // intercept the request to the authentification server
+      nock(sAuthServer) // intercept the request to the authentification server
         .post(sAuthPath)
         .reply(function (uri, requestBody) {
           // check request headers
@@ -88,7 +91,7 @@ describe('authenticator', function () {
           return [200, aExampleTokens[0]]
         })
 
-      var authenticator = new Authenticator(sClientId, sClientSecret, sAuthServer + sAuthPath)
+      var authenticator = new Authenticator(tenant, landscape, host, sClientId, sClientSecret)
       var promise = authenticator.getNewToken()
 
       promise.then(
@@ -103,9 +106,9 @@ describe('authenticator', function () {
     })
 
     it('should return an error', function (done) {
-      var authenticator = new Authenticator(sClientId, sClientSecret, sAuthServer + sAuthPath)
+      var authenticator = new Authenticator(tenant, landscape, host, sClientId, sClientSecret)
 
-      nock('https://auth-url.com') // intercept the request to the authentification server
+      nock(sAuthServer) // intercept the request to the authentification server
         .post(sAuthPath)
         .replyWithError('something awful happened')
       var promise = authenticator.getNewToken()
@@ -122,9 +125,9 @@ describe('authenticator', function () {
     })
 
     it('Error: Response-code !== 200', function (done) {
-      var authenticator = new Authenticator(sClientId, sClientSecret, sAuthServer + sAuthPath)
+      var authenticator = new Authenticator(tenant, landscape, host, sClientId, sClientSecret)
 
-      nock('https://auth-url.com') // intercept the request to the authentification server
+      nock(sAuthServer) // intercept the request to the authentification server
         .post(sAuthPath)
         .reply(400, 'Error')
       var promise = authenticator.getNewToken()
@@ -141,9 +144,9 @@ describe('authenticator', function () {
     })
 
     it('Error: Bad credentials', function (done) {
-      var authenticator = new Authenticator(sClientId, sClientSecret, sAuthServer + sAuthPath)
+      var authenticator = new Authenticator(tenant, landscape, host, sClientId, sClientSecret)
 
-      nock('https://auth-url.com') // intercept the request to the authentification server
+      nock(sAuthServer) // intercept the request to the authentification server
         .post(sAuthPath)
         .reply(401, 'Error')
       var promise = authenticator.getNewToken()
@@ -160,9 +163,9 @@ describe('authenticator', function () {
     })
 
     it('Error: Token URL not found', function (done) {
-      var authenticator = new Authenticator(sClientId, sClientSecret, sAuthServer + sAuthPath)
+      var authenticator = new Authenticator(tenant, landscape, host, sClientId, sClientSecret)
 
-      nock('https://auth-url.com') // intercept the request to the authentification server
+      nock(sAuthServer) // intercept the request to the authentification server
         .post(sAuthPath)
         .reply(404, 'Error')
       var promise = authenticator.getNewToken()
