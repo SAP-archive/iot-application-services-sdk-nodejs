@@ -1,30 +1,27 @@
 /* global describe it */
-var assert = require('assert')
-var Token = require('./../../lib/auth/token')
+const assert = require('assert');
+const Token = require('./../../lib/auth/Token');
 
-describe('token', function () {
-  describe('getAccessToken', function () {
-    it('should return the stored token', function () {
-      var jwtToken = 'jwestesestdsf8u98324'
-      var token = new Token(jwtToken, null)
+describe('token', () => {
+  describe('getAccessToken', () => {
+    it('should return the stored token', () => {
+      const jwtToken = 'jwestesestdsf8u98324';
+      const token = new Token(jwtToken, null);
+      assert.equal(jwtToken, token.getAccessToken());
+    });
+  });
 
-      assert.equal(jwtToken, token.getAccessToken())
-    })
-  })
+  describe('isExpired', () => {
+    it('should not be expired', () => {
+      const expiresIn = 1000;
+      const token = new Token('1', expiresIn);
+      assert.equal(false, token.isExpired());
+    });
 
-  describe('isExpired', function () {
-    it('should not be expired', function () {
-      var expiresIn = 1000
-      var token = new Token('1', expiresIn)
-
-      assert.equal(false, token.isExpired())
-    })
-
-    it('should be expired', function () {
-      var expiresIn = -1000
-      var token = new Token('1', expiresIn)
-
-      assert.equal(true, token.isExpired())
-    })
-  })
-})
+    it('should be expired', () => {
+      const expiresIn = -1000;
+      const token = new Token('1', expiresIn);
+      assert.equal(true, token.isExpired());
+    });
+  });
+});

@@ -4,17 +4,24 @@
   "description": "NodeJS package that acts as a thin wrapper over the API of SAP IoT Application Enablement.",
   "main": "index.js",
   "scripts": {
-    "test": "set NODE_ENV=test&& standard && mocha --recursive"
+    "pretest": "eslint --ignore-path .gitignore .",
+    "test": "set NODE_ENV=test && mocha --recursive"
   },
   "dependencies": {
     "debug": "^3.1.0",
     "dotenv": "^4.0.0",
-    "request": "^2.81.0"
+    "request": "^2.85.0",
+    "request-promise-native": "^1.0.5",
+    "nconf": "^0.10.0"
   },
   "devDependencies": {
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
     "mocha": "^3.4.2",
-    "nock": "^9.0.13",
-    "standard": "*"
+    "nock": "^9.0.13"
   },
   "repository": {
     "type": "git",
