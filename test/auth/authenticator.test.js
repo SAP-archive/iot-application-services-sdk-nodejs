@@ -5,7 +5,7 @@ const Authenticator = require('./../../lib/auth/Authenticator');
 
 let authenticator;
 
-describe('authenticator', () => {
+describe('Authenticator', () => {
   beforeEach(() => {
     authenticator = new Authenticator({
       tenant: 'test',

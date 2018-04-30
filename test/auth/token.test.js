@@ -2,7 +2,7 @@
 const assert = require('assert');
 const Token = require('./../../lib/auth/Token');
 
-describe('token', () => {
+describe('Token', () => {
   describe('getAccessToken', () => {
     it('should return the stored token', () => {
       const jwtToken = 'jwestesestdsf8u98324';
