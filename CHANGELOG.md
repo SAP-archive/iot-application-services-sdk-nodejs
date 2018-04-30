@@ -14,6 +14,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Support for Cloud Foundry.
 
+## [1.4.0] - 2018-01-27
+
+### Added
+- Support for Cloud Foundry.
+
 ## [1.3.0] - 2017-12-16
 
 ### Changed
@@ -21,6 +26,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
 - `npm install` issue.
+
+### Fixed
+- `npm install` issue
 
 ## [1.2.3] - 2017-10-02
 ### Fixed
