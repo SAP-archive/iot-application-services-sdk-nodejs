@@ -1,7 +1,6 @@
 {
   "extends": "airbnb",
   "rules": {
-    "func-names": ["error", "never"],
-    "import/no-unresolved": "off"
+    "func-names": ["error", "never"]
   }
 }

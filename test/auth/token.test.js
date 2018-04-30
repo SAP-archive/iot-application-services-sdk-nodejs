@@ -1,6 +1,6 @@
 /* global describe it */
 const assert = require('assert');
-const Token = require('../../lib/auth/Token');
+const Token = require('../../lib/auth/token');
 
 describe('Token', () => {
   describe('getAccessToken', () => {
