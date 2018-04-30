@@ -1,5 +1,7 @@
 # SAP IoT Application Enablement SDK for Node.js
 
+[![Build Status](https://travis-ci.org/SAP/iot-application-services-sdk-nodejs.svg?branch=master)](https://travis-ci.org/SAP/iot-application-services-sdk-nodejs)
+
 **Table of Contents**
 * [Description](#description)
 * [Requirements](#requirements)
@@ -58,22 +60,25 @@ __4. Usage:__
 
 Now we create the main part of our application, which calls the API of SAP IoT AE. Create a file called `index.js` in the root of the project. Copy and paste the following code to this file:
 ```js
-var NodeAE = require('iot-application-services-sdk-nodejs')
-var nodeAE = new NodeAE()
+const AE = require('iot-application-services-sdk-nodejs');
+const client = new AE();
 
-// set the base URI for the NodeWrapper
-nodeAE.setBaseURI('appiot-mds') // 'appiot-mds' = the app of the API we will use in the following
+async function main() {
+  // set the base url
+  client.setBaseUrl('appiot-mds'); // 'appiot-mds' = the app of the API we will use in the following
 
-// now we can use plain http methods to send requests (post, get, put, delete)
-var loadingThings = nodeAE.get('/Things')
-loadingThings.then(
-  function success (oResponse) {
-    console.log(JSON.parse(oResponse.body)) // will print all Things on the console
-  },
-  function error (err) {
-    throw err
+  // request the things
+  let responseBody;
+  try {
+    responseBody = await client.request('/Things');
+  } catch (err) {
+    console.error(err.message);
   }
-)
+
+  console.log(responseBody); // will print all things on the console
+}
+
+main() // start the app
 ```
 
 Now you can start the application. Enjoy!
@@ -94,7 +99,11 @@ Lint and test your code using `npm test`.
 We use [Semantic Versioning](http://semver.org/). For the versions available, see the [tags on this repository](https://github.com/SAP/iot-application-services-sdk-nodejs/tags). 
 
 ## To-Do (upcoming changes)
-NA
+- [X] Refactoring
+- [X] Send GET requests by just passing the url
+- [ ] Support extrem parallelization
+- [ ] TypeScript
+- [ ] Streaming
 
 ## License
 Copyright (c) 2017 SAP SE or an SAP affiliate company. All rights reserved.
