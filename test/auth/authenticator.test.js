@@ -1,7 +1,7 @@
 /* global describe it beforeEach */
 const assert = require('assert');
 const nock = require('nock');
-const Authenticator = require('./../../lib/auth/Authenticator');
+const Authenticator = require('../../lib/auth/Authenticator');
 
 let authenticator;
 
