@@ -5,7 +5,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-- Support of thingmodeler-fileservice.
+- Support of `thingmodeler-fileservice`.
+
+## [2.0.0] - 2018-05-01
+- Refactoring.
+- Replaced `request` with `request-promise-native`.
+- Airbnb JavaScript Style Guide.
+
+## [1.4.0] - 2018-01-27
+
+### Added
+- Support for Cloud Foundry.
 
 ## [1.4.0] - 2018-01-27
 
@@ -15,7 +25,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [1.3.0] - 2017-12-16
 
 ### Changed
-- Replaced winston with debug.
+- Replaced `winston` with `debug`.
+
+### Fixed
+- `npm install` issue.
 
 ### Fixed
 - `npm install` issue
