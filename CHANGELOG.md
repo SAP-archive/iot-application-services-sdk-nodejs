@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+- Support of `thingmodeler-fileservice`.
+
+## [2.0.0] - 2018-05-01
 - Refactoring.
 - Replaced `request` with `request-promise-native`.
 - Airbnb JavaScript Style Guide.
