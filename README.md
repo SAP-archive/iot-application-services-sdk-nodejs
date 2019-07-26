@@ -61,7 +61,7 @@ $ npm init
 
 Next the SAP Leonardo IoT SDK can be installed and added to dependencies
 ```console
-$ npm install SAP/leonardo-iot-sdk-nodejs --save
+$ npm install SAP/iot-application-services-sdk-nodejs#v2_leonardo_iot_sdk --save
 ```
 
 ### 2) Setup authorization
