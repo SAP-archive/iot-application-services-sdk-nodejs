@@ -1,19 +1,18 @@
-/* global describe it beforeEach */
 const assert = require('assert');
 const nock = require('nock');
 const Authenticator = require('../../lib/auth/authenticator');
 
 let authenticator;
 
+const sampleToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gU0FQIiwiaWF0IjoxNTE2MjM5MDIyfQ.vrRldgjFOYWVhsOQEoM-lHDpPc_g6rZ6ecsTRM6H8MA';
+
 describe('Authenticator', () => {
   beforeEach(() => {
     authenticator = new Authenticator({
-      tenant: 'test',
-      landscape: 'eu10',
-      host: 'hana.ondemand.com',
-      clientId: 'clientId',
-      clientSecret: 'clientSecret',
-    });
+      url: 'https://test.authentication.eu10.hana.ondemand.com',
+      clientid: 'clientId',
+      clientsecret: 'clientSecret'
+    }, {});
   });
 
   describe('getAccessToken', () => {
@@ -21,37 +20,24 @@ describe('Authenticator', () => {
       nock('https://test.authentication.eu10.hana.ondemand.com')
         .post('/oauth/token')
         .reply(200, {
-          access_token: '98723dsfsdf',
+          access_token: sampleToken,
           expires_in: 1000,
         });
 
       const token = await authenticator.getAccessToken();
-      assert.equal(token, '98723dsfsdf');
+      assert.equal(token, sampleToken);
     });
 
     it('should only return a new token if the stored token is expired', async () => {
       nock('https://test.authentication.eu10.hana.ondemand.com')
         .post('/oauth/token')
         .reply(200, {
-          access_token: '98723dsfsdf',
+          access_token: sampleToken,
           expires_in: -1000,
         });
 
-      nock('https://test.authentication.eu10.hana.ondemand.com')
-        .post('/oauth/token')
-        .reply(200, {
-          access_token: '98723dsfsdf2',
-          expires_in: 1000,
-        });
-
-      let token = await authenticator.getAccessToken();
-      assert.equal(token, '98723dsfsdf');
-
-      token = await authenticator.getAccessToken();
-      assert.equal(token, '98723dsfsdf2');
-
-      token = await authenticator.getAccessToken();
-      assert.equal(token, '98723dsfsdf2');
+      const token = await authenticator.getAccessToken();
+      assert.equal(token, sampleToken);
     });
   });
 
@@ -64,25 +50,25 @@ describe('Authenticator', () => {
           assert.equal(this.req.headers.authorization, 'Basic Y2xpZW50SWQ6Y2xpZW50U2VjcmV0');
           assert.equal(requestBody, 'grant_type=client_credentials&response_type=token');
           return [200, {
-            access_token: '98723dsfsdf',
+            access_token: sampleToken,
             expires_in: -1000,
           }];
         });
 
       const token = await authenticator.getNewToken();
-      assert.equal(token.getAccessToken(), '98723dsfsdf');
+      assert.equal(token.getAccessToken(), sampleToken);
     });
 
     it('should return an error', async () => {
       nock('https://test.authentication.eu10.hana.ondemand.com')
         .post('/oauth/token')
-        .replyWithError('something awful happened');
+        .replyWithError('UAA Error');
 
       try {
         await authenticator.getNewToken();
-        throw new Error();
+        assert.fail();
       } catch (error) {
-        assert.equal(error.message, 'Error: something awful happened');
+        assert.equal(error.message, 'Error: UAA Error');
       }
     });
   });

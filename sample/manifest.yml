@@ -1,0 +1,10 @@
+---
+applications:
+- name: sap-leonardo-iot-sdk-js-sample
+  command: node --inspect sample_2_express_application.js
+  buildpacks:
+  - https://github.com/cloudfoundry/nodejs-buildpack#v1.6.34
+  instances: 1
+  memory: 128MB
+  services:
+   - <serviceBrokerService>

@@ -1,3 +1,22 @@
+# Environment for local development
+default-env.json
 .env
+
+# Packages
+.tgz
+
+# Dependency directories
 node_modules
-.vscode
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# IntelliJ
+.idea
+*.iml
+
+# Optional npm cache directory
+.npm
+package-lock.json

@@ -1,1 +1,1 @@
-module.exports = require('./lib/ApplicationEnablement');
+module.exports = require('./lib/LeonardoIoT');

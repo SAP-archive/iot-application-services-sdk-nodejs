@@ -1,0 +1,21 @@
+{
+  "name": "@sap/leonardo-iot-sdk-sample",
+  "version": "1.0.0",
+  "description": "Samples for usage of SAP Leonardo IoT SDK",
+  "scripts": {
+    "start": "node --inspect server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "^8.6.0"
+  },
+  "dependencies": {
+    "@sap/leonardo-iot-sdk": "file:../sap-leonardo-iot-sdk-0.0.23-alpha.tgz",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "mocha": "^6.1.4"
+  },
+  "author": "SAP SE",
+  "license": "Apache-2.0"
+}

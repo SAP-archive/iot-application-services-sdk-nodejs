@@ -1,6 +1,10 @@
 {
   "extends": "airbnb",
+  "env": {
+    "node": true,
+    "mocha": true
+  },
   "rules": {
-    "func-names": ["error", "never"]
+    "comma-dangle": "off"
   }
 }
