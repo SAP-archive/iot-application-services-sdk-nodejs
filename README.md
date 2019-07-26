@@ -1,6 +1,6 @@
 ## Remark
 
-:construction: This branch contains the brand new SAP Leonardo IoT SDK for Node.js. It covers all functionality of the "Application Enablement Wrapper" tool. It will not be merged into the master branch for incompatible change reasons, but will very soon be provided in a own public github repository. We will let you know here as soon as this repository has launched and is available for all of you :rocket:
+:construction: This branch contains the brand new SAP Leonardo IoT SDK for Node.js. It will not be merged into the master branch for incompatible change reasons, but will very soon be provided in a own public github repository. We will let you know here as soon as this repository has launched and is available for all of you :rocket:
 
 # SAP Leonardo IoT SDK for Node.js
 
