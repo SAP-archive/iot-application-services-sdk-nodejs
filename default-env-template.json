@@ -9,11 +9,6 @@
         "credentials": <PASTE LEONARDO IOT SERVICE KEY HERE>
       }
     ],
-    "user-provided": [
-      {
-        "name": <ANY NAME REFERENCED IN CLIENT INSTANTIATION>,
-        "credentials": <PASTE LEONARDO IOT SERVICE KEY HERE>
-      }
-    ]
+    "user-provided": []
   }
 }
