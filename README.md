@@ -59,7 +59,12 @@ If you do not already have a NPM project including a `package.json` file, let's 
 $ npm init
 ```
 
-Next the SAP Leonardo IoT SDK can be installed and added to your new application's dependencies
+Next you have to set the SAP registry as source for @sap scoped modules within your project
+```console
+$ npm config set @sap:registry https://npm.sap.com
+```
+
+Afterwards the SAP Leonardo IoT SDK can be installed and added to your new application's dependencies
 ```console
 $ npm install SAP/iot-application-services-sdk-nodejs#v2_leonardo_iot_sdk --save
 ```
@@ -68,7 +73,7 @@ $ npm install SAP/iot-application-services-sdk-nodejs#v2_leonardo_iot_sdk --save
 Each request to SAP Leonardo IoT services requires an authorization token provided by an UAA instance to ensure authorization and authentication. As the recommended authorization configuration relates to the runtime platform, we have to distinguish in this step between cloud foundry and local applications:
 
 ##### Local application
-For local setup copy the file `default-env-template.json` from this github repository into your project root directory. Afterwards copy the Leonardo IoT service key information of your subaccount's space (see SCP cockpit) and paste all content into the placeholder part of the template file. Now rename this template file to `default-env.json` so it fulfills the naming convention.
+For local setup copy the file `default-env-template.json` from this github repository into your project root directory. Afterwards copy the full content of your Leonardo IoT service key information from your subaccount's space ([service key creation documentation](https://help.sap.com/viewer/195126f4601945cba0886cbbcbf3d364/latest/en-US/a41c28db0cf449059d48c23fa5f7b24b.html)) and paste it into the placeholder part of the template file. Now rename this template file to `default-env.json` so it fulfills the naming convention.
 
 ##### Cloud Foundry application
 Add the Leonardo IoT service binding into the `manifest.yml` file which is used for application deployment:
