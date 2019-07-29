@@ -2,9 +2,9 @@
   "VCAP_SERVICES": {
     "iotae": [
       {
-        "name": <ANY NAME>,
+        "name": "leonardo-iot-service", // Name attribute is mandatory for all services, choose any meaningful name
         "tags": [
-          "leonardoiot"
+          "leonardoiot" // Identifier of this service, do not change or remove this tag
         ],
         "credentials": <PASTE LEONARDO IOT SERVICE KEY HERE>
       }
