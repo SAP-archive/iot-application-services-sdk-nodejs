@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@sap/leonardo-iot-sdk": "github:SAP/iot-application-services-sdk-nodejs#v2_leonardo_iot_sdk",
+    "async-mqtt": "2.3.0",
     "express": "^4.17.1"
   },
   "devDependencies": {
