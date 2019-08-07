@@ -1,3 +1,8 @@
+![](https://img.shields.io/badge/STATUS-NOT%20CURRENTLY%20MAINTAINED-red.svg?longCache=true&style=flat)
+
+# Important Notice
+We decided to deprecate and stop the development of this repository as it was replaced by the feature rich new [SAP Leonardo IoT SDK](https://github.com/SAP/leonardo-iot-sdk-nodejs). Please follow the [migration guide](https://github.com/SAP/leonardo-iot-sdk-nodejs/blob/master/MIGRATION-GUIDE.md) which provides step by step guidance adapting your existing project to the new SDK solution.
+
 # SAP IoT Application Enablement SDK for Node.js
 
 [![Build Status](https://travis-ci.org/SAP/iot-application-services-sdk-nodejs.svg?branch=master)](https://travis-ci.org/SAP/iot-application-services-sdk-nodejs)
